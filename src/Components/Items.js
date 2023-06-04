@@ -1,14 +1,19 @@
 import './Item.css'
+import ExpenseDate from './ExpenseDate';
+import ExpenseDetails from './ExpenseDetails';
 function Items(props)
-{
+{   
+    
     return (
         <div className="expense-item">
-            <div>{props.date}</div>
+           <ExpenseDate date={props.date}/>
             <div className="expense-item__description">
                 <h2>{props.desc}</h2>
                 <h2>{props.location}</h2>
                 <div className="expense-item__price"> Rs {props.price}</div>
+                <ExpenseDetails location={props.location} price={props.price} desc={props.desc}/>
             </div>
+            
         </div>
     )
 }
